@@ -121,6 +121,10 @@ class PostProcessingScan(object):
 
             logging.info('Processing {}.'.format(i))
 
+            if fname[:6] == 'UNPACK':
+                logging.info('Skipping, since it is still unpacking.')
+                continue
+
             r = core.sql.get_single_search_result('title', fname)
             if r:
                 logging.info('Found match for {} in releases: {}.'.format(fname, r['title']))
