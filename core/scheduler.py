@@ -121,7 +121,7 @@ class PostProcessingScan(object):
 
             logging.info('Processing {}.'.format(i))
 
-            if fname[:6] == 'UNPACK':
+            if fname[:8] == '_UNPACK_':
                 logging.info('Skipping, since it is still unpacking.')
                 continue
 
